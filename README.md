@@ -1,19 +1,19 @@
-# ansible-packer
+# ansible-pacaur
 
-An Ansible module for installing [AUR](https://aur.archlinux.org/) packages via the [packer][packer] AUR helper.
+An Ansible module for installing [AUR](https://aur.archlinux.org/) packages via the [pacaur][pacaur] AUR helper.
 
-This assumes your target node already has packer and its dependecies installed.
+This assumes your target node already has pacaur and its dependecies installed.
 
 ## Dependencies (Managed Node)
 
 * [Arch Linux](https://www.archlinux.org/) (Obviously)
-* [jshon](https://www.archlinux.org/packages/community/x86_64/jshon/) for packer
-* [packer][packer]
+* [jshon](https://www.archlinux.org/packages/community/x86_64/jshon/) for pacaur
+* [pacaur][pacaur]
 
 ## Installation
 
 1. Clone this repo
-2. Copy or link the `packer` file into your global Ansible library (usually `/usr/share/ansible`) or into the `./library` folder alongside your top-level playbook
+2. Copy or link the `pacaur` file into your global Ansible library (usually `/usr/share/ansible`) or into the `./library` folder alongside your top-level playbook
 
 ## Usage
 
@@ -31,13 +31,13 @@ More detailed docs are on the way, but in general:
 
 ```yaml
 # Install package foo
-- packer: name=foo state=present
+- pacaur: name=foo state=present
 
 # Remove packages foo and bar
-- packer: name=foo,bar state=absent
+- pacaur: name=foo,bar state=absent
 
 # Recursively remove package baz
-- packer: name=baz state=absent recurse=yes
+- pacaur: name=baz state=absent recurse=yes
 ```
 
 ## Todo
@@ -47,5 +47,5 @@ More detailed docs are on the way, but in general:
 
 Have other ideas? Better way of doing something? Open an issue or a pull request.
 
-[packer]: https://github.com/keenerd/packer
+[pacaur]: https://github.com/rmarquis/pacaur
 [pacman-mod]: http://docs.ansible.com/pacman_module.html

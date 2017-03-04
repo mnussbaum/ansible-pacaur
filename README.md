@@ -33,6 +33,9 @@ More detailed docs are on the way, but in general:
 # Install package foo
 - pacaur: name=foo state=present
 
+# Ensure package fuzz is installed and up-to-date
+- pacaur: name=fuzz state=latest
+
 # Remove packages foo and bar
 - pacaur: name=foo,bar state=absent
 

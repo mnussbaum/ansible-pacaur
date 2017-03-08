@@ -23,9 +23,13 @@ More detailed docs are on the way, but in general:
 
 ### Options
 
-* `name` - required, name of the AUR package to install
-* `recurse` - optional, yes/no, whether to recursively remove packages. See [pacman module docs][pacman-mod]
-* `state` - optional, present/absent, whether the package needs to be installed or not
+| parameter    | required  | default | choices               | description                         |
+|--------------|-----------|---------|-----------------------|-------------------------------------|
+| name         | no        |         |                       | Name of the AUR package to install. |
+| recurse      | no        | no      | yes/no                | Whether to recursively remove packages. See [pacman module docs][pacman-mod]. |
+| state        | no        | no      | absent/present/latest | Whether the package needs to be installed or updated. |
+| update_cache | no        | no      | yes/no                | Whether or not to refresh the master package lists. This can be run as part of a package installation or as a separate step. |
+| upgrade      | no        | no      | yes/no                | Whether or not to upgrade the whole systemd. |
 
 ### Examples
 
@@ -41,6 +45,9 @@ More detailed docs are on the way, but in general:
 
 # Recursively remove package baz
 - pacaur: name=baz state=absent recurse=yes
+
+# Effectively run pacaur -Syu
+- pacaur: update_cache=yes upgrade=yes
 ```
 
 ## Todo
